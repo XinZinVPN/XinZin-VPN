@@ -11,6 +11,9 @@ import time
 
 from check_tcp import check_tcp
 
+from outbounds import build_outbound
+from singbox import filter_valid
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -86,6 +89,24 @@ def main():
     print(f"checked: {len(unique) - len(skipped)}, alive: {len(alive)}, dead: {len(unique) - len(skipped) - len(alive)}, skipped (UDP protocols): {len(skipped)}")
     print(f"alive by protocol: {dict(Counter(node['protocol'] for node in alive))}")
     print(f"time: {duration} s")
-
+    built = []
+    not_converted = Counter()
+    for node in alive + skipped:
+        try:
+            outbound = build_outbound(node["link"], "NODE_" + str(len(built)))
+        except Exception as error:
+            not_converted[node["protocol"] + ": " + type(error).__name__ + " " + str(error)[:60]] += 1
+            continue
+        built.append((node, outbound))
+    print("=== Outbound build ===")
+    print(f"built: {len(built)}, not converted: {sum(not_converted.values())}")
+    for reason, count in not_converted.most_common(15):
+        print(f"  {count} x {reason}")
+    started = time.time()
+    good, bad = filter_valid([outbound for _, outbound in built])
+    print("=== sing-box check ===")
+    print(f"valid: {len(good)}, rejected: {len(bad)}, time: {round(time.time() - started)} s")
+    for message, count in Counter(message[:120] for _, message in bad).most_common(10):
+        print(f"  {count} x {message}")
 
 main()
