@@ -13,6 +13,7 @@ from check_tcp import check_tcp
 from outbounds import build_outbound
 from singbox import filter_valid
 from check_url import check_url
+from geo import detect_countries
 
 ROOT = Path(__file__).resolve().parents[2]
 
