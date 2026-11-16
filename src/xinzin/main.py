@@ -15,6 +15,11 @@ from singbox import filter_valid
 from check_url import check_url
 from geo import detect_countries
 
+import sys
+
+from render import render
+from publish import count_published, validate, write_output
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -127,4 +132,14 @@ def main():
     print(f"time: {round(time.time() - started)} s")
     print(f"countries: {dict(countries.most_common(15))}")
     print(f"answered by: {dict(services_used)}")
+    lines = render(passed)
+    previous_count = count_published(settings["published_url"])
+    ok, message = validate(lines, previous_count, settings["min_servers"], settings["minimum_results_ratio"])
+    print("=== Publish ===")
+    print(f"new: {len(lines)}, previous: {previous_count}")
+    if not ok:
+        print("REJECTED: " + message)
+        sys.exit(1)
+    write_output(lines, ROOT / "dist")
+    print("written dist/XinZinVPN.txt")
 main()
