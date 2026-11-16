@@ -1,0 +1,40 @@
+sources:
+  - name: AetrisVPN_BL
+    url: https://raw.githubusercontent.com/flaafix/AetrisVPN-black-list/refs/heads/main/configs.txt
+    priority: 0
+  - name: AetrisVPN_WL
+    url: https://github.com/flaafix/AetrisVPN-white-list-lite/raw/refs/heads/main/AetrisVPN.txt
+    priority: 0
+  - name: IgareckVPN_BL
+    url: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
+    priority: 0
+  - name: IgareckVPN_V2
+    url: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt
+    priority: 1
+  - name: IgareckVPN_SS
+    url: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS_WEAK_DPI_RUS.txt
+    priority: 1
+  - name: NosokVPN_Verified
+    url: https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/refs/heads/main/verified_configs.txt
+    priority: 1
+  - name: NosokVPN_RU
+    url: https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/refs/heads/main/ru_configs.txt
+    priority: 1
+  - name: NosokVPN_All
+    url: https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/refs/heads/main/all_configs.txt
+    priority: 0
+  - name: Luxxuria_SpeedTested
+    url: https://raw.githubusercontent.com/luxxuria/harvester/refs/heads/main/speed_tested.txt
+    priority: 0
+  - name: Luxxuria_PingTested
+    url: https://raw.githubusercontent.com/luxxuria/harvester/refs/heads/main/ping_tested.txt
+    priority: 0
+  - name: FlareFeed_Top500
+    url: https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/refs/heads/main/public/Top500.txt
+    priority: 1
+  - name: FlareFeed_Fastest
+    url: https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/refs/heads/main/public/fastest.txt
+    priority: 1
+  - name: Subzio_WL_Collection
+    url: https://raw.githubusercontent.com/Subzio/subzio/refs/heads/main/WHITE_LIST_PROXY_COLLECTION.txt
+    priority: 0
