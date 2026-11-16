@@ -7,6 +7,10 @@ import yaml
 
 from parsers import parse_link
 
+import time
+
+from check_tcp import check_tcp
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -74,6 +78,14 @@ def main():
         print("=== examples of unparsed lines ===")
         for sample in broken_samples:
             print(sample)
+    settings = yaml.safe_load((ROOT / "config" / "settings.yaml").read_text(encoding="utf-8"))
+    started = time.time()
+    alive, skipped = check_tcp(list(unique.values()), settings["tcp_timeout_seconds"], settings["tcp_parallel"])
+    duration = round(time.time() - started)
+    print("=== TCP check ===")
+    print(f"checked: {len(unique) - len(skipped)}, alive: {len(alive)}, dead: {len(unique) - len(skipped) - len(alive)}, skipped (UDP protocols): {len(skipped)}")
+    print(f"alive by protocol: {dict(Counter(node['protocol'] for node in alive))}")
+    print(f"time: {duration} s")
 
 
 main()
