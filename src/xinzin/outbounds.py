@@ -4,6 +4,7 @@ from urllib.parse import parse_qs, unquote, urlsplit
 
 from parsers import split_host_port
 
+VALID_FINGERPRINTS = {"chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"}
 
 def fix_base64(text):
     text = text.replace("-", "+").replace("_", "/")
@@ -27,6 +28,10 @@ def get_userinfo(parts):
 
 def build_tls(server_name, fingerprint, alpn, insecure, reality_key="", short_id=""):
     tls = {"enabled": True}
+
+    fingerprint = fingerprint.lower()
+    if fingerprint not in VALID_FINGERPRINTS:
+        fingerprint = ""
     if server_name:
         tls["server_name"] = server_name
     if insecure:
@@ -41,7 +46,7 @@ def build_tls(server_name, fingerprint, alpn, insecure, reality_key="", short_id
 
 
 def build_transport(kind, path, host, service_name):
-    if kind in ("", "tcp", "none"):
+    if kind in ("", "tcp", "none", "raw"):
         return None
     if kind == "ws":
         transport = {"type": "ws", "path": path or "/"}
