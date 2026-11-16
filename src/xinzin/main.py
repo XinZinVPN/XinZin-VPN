@@ -5,6 +5,8 @@ from pathlib import Path
 
 import yaml
 
+from parsers import parse_link
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -16,45 +18,62 @@ def download(url):
 
 def decode_if_base64(text):
     if "://" in text:
-        return text, False
+        return text
     try:
         compact = "".join(text.split())
         compact += "=" * (-len(compact) % 4)
-        decoded = base64.b64decode(compact).decode("utf-8", errors="replace")
-        return decoded, True
+        return base64.b64decode(compact).decode("utf-8", errors="replace")
     except Exception:
-        return text, False
+        return text
 
 
-def scheme_of(line):
-    if "://" not in line:
-        return "other"
-    return line.split("://", 1)[0].lower()
+def get_lines(text):
+    lines = []
+    for line in text.splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            lines.append(line)
+    return lines
 
 
 def main():
-    config_path = ROOT / "config" / "sources.yaml"
-    config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    total = 0
-    print("=== XinZinVPN: source report ===")
-    for source in config["sources"]:
+    config = yaml.safe_load((ROOT / "config" / "sources.yaml").read_text(encoding="utf-8"))
+    sources = sorted(config["sources"], key=lambda source: source["priority"])
+    unique = {}
+    broken_samples = []
+    print("=== XinZinVPN: parse and dedupe report ===")
+    for source in sources:
         name = source["name"]
         try:
-            text = download(source["url"])
+            text = decode_if_base64(download(source["url"]))
         except Exception as error:
             print(f"[FAIL] {name}: {error}")
             continue
-        text, was_base64 = decode_if_base64(text)
-        lines = [
-            line.strip()
-            for line in text.splitlines()
-            if line.strip() and not line.strip().startswith("#")
-        ]
-        schemes = Counter(scheme_of(line) for line in lines)
-        total += len(lines)
-        base64_note = " (base64)" if was_base64 else ""
-        print(f"[OK] {name}: {len(lines)} lines{base64_note} -> {dict(schemes)}")
-    print(f"=== total lines: {total} ===")
+        lines = get_lines(text)
+        added = 0
+        duplicates = 0
+        broken = 0
+        for line in lines:
+            node = parse_link(line)
+            if node is None:
+                broken += 1
+                if len(broken_samples) < 5:
+                    broken_samples.append(line[:80])
+                continue
+            key = (node["address"], node["port"])
+            if key in unique:
+                duplicates += 1
+                continue
+            unique[key] = node
+            added += 1
+        print(f"[OK] {name} (priority {source['priority']}): {len(lines)} lines, new {added}, duplicates {duplicates}, unparsed {broken}")
+    protocols = Counter(node["protocol"] for node in unique.values())
+    print(f"=== unique servers: {len(unique)} ===")
+    print(f"=== by protocol: {dict(protocols)} ===")
+    if broken_samples:
+        print("=== examples of unparsed lines ===")
+        for sample in broken_samples:
+            print(sample)
 
 
 main()
