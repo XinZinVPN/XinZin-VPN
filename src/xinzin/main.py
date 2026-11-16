@@ -10,9 +10,9 @@ from parsers import parse_link
 import time
 
 from check_tcp import check_tcp
-
 from outbounds import build_outbound
 from singbox import filter_valid
+from check_url import check_url
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -108,5 +108,13 @@ def main():
     print(f"valid: {len(good)}, rejected: {len(bad)}, time: {round(time.time() - started)} s")
     for message, count in Counter(message[:120] for _, message in bad).most_common(10):
         print(f"  {count} x {message}")
-
+    node_by_tag = {outbound["tag"]: node for node, outbound in built}
+    pairs = [(node_by_tag[outbound["tag"]], outbound) for outbound in good]
+    started = time.time()
+    print("=== URL test ===", flush=True)
+    passed, reasons = check_url(pairs, settings["url_test_batch_size"], settings["url_test_timeout_seconds"], settings["url_test_retries"])
+    print(f"tested: {len(pairs)}, passed: {len(passed)}, failed: {len(pairs) - len(passed)}, time: {round(time.time() - started)} s")
+    print(f"passed by protocol: {dict(Counter(node['protocol'] for node in passed))}")
+    for reason, count in reasons.most_common(10):
+        print(f"  {count} x {reason}")
 main()
