@@ -1,1 +1,0 @@
-print("XinZinVPN: workflow works")
