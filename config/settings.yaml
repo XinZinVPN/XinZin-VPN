@@ -8,3 +8,6 @@ url_test_batch_size: 100
 url_test_timeout_seconds: 10
 url_test_retries: 1
 geo_timeout_seconds: 10
+min_servers: 50
+minimum_results_ratio: 0.5
+published_url: https://xinzinvpn.github.io/XinZin-VPN/XinZinVPN.txt
