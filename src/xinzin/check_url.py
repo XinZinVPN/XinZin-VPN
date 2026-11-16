@@ -71,6 +71,8 @@ def test_node(port, timeout, retries):
             reason = fetch_once(port, timeout)
         except urllib.error.HTTPError as error:
             reason = "http " + str(error.code)
+        except urllib.error.URLError as error:
+            reason = "URLError " + str(error.reason)[:50]
         except Exception as error:
             reason = type(error).__name__
         if not reason:
