@@ -118,4 +118,13 @@ def main():
     print(f"passed by protocol: {dict(Counter(node['protocol'] for node in passed))}")
     for reason, count in reasons.most_common(10):
         print(f"  {count} x {reason}")
+    passed_ids = {id(node) for node in passed}
+    passed_pairs = [(node, outbound) for node, outbound in pairs if id(node) in passed_ids]
+    started = time.time()
+    print("=== Country detection ===", flush=True)
+    services_used = detect_countries(passed_pairs, settings["url_test_batch_size"], settings["geo_timeout_seconds"])
+    countries = Counter(node.get("country") or "unknown" for node in passed)
+    print(f"time: {round(time.time() - started)} s")
+    print(f"countries: {dict(countries.most_common(15))}")
+    print(f"answered by: {dict(services_used)}")
 main()
