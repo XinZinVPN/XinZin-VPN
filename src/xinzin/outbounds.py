@@ -85,8 +85,12 @@ def build_vless(link, tag):
     security = first(params, "security", "none")
     if security in ("tls", "reality"):
         reality_key = first(params, "pbk") if security == "reality" else ""
+
         if security == "reality" and not reality_key:
             raise ValueError("reality without key")
+        if security == "reality" and not first(params, "sni"):
+            raise ValueError("reality without sni")
+
         insecure = is_true(first(params, "allowInsecure")) or is_true(first(params, "insecure"))
         outbound["tls"] = build_tls(
             first(params, "sni") or first(params, "host"),
