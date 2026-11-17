@@ -14,6 +14,7 @@ from outbounds import build_outbound
 from singbox import filter_valid
 from check_url import check_url
 from geo import detect_countries
+from check_speed import check_speed
 
 import sys
 
