@@ -22,8 +22,8 @@ def validate(lines, previous_count, min_servers, min_ratio):
     return True, ""
 
 
-def write_output(lines, directory):
+def write_output(lines, directory, filename):
     directory.mkdir(parents=True, exist_ok=True)
-    temp = directory / "XinZinVPN.txt.tmp"
+    temp = directory / (filename + ".tmp")
     temp.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    temp.replace(directory / "XinZinVPN.txt")
+    temp.replace(directory / filename)
