@@ -127,6 +127,15 @@ def main():
     passed_ids = {id(node) for node in passed}
     passed_pairs = [(node, outbound) for node, outbound in pairs if id(node) in passed_ids]
     started = time.time()
+    print("=== Speed test ===", flush=True)
+    tested = len(passed_pairs)
+    passed_pairs, speed_reasons, speeds = check_speed(passed_pairs, settings["url_test_batch_size"], settings["speed_download_bytes"], settings["speed_timeout_seconds"], settings["speed_parallel"], settings["speed_min_mbps"])
+    passed = [node for node, _ in passed_pairs]
+    print(f"tested: {tested}, passed: {len(passed_pairs)}, time: {round(time.time() - started)} s")
+    print(f"downloads completed: {len(speeds)}, at least Mbit/s: {dict((limit, sum(1 for speed in speeds if speed >= limit)) for limit in (0.5, 1, 2, 5, 10, 20))}")
+    for reason, count in speed_reasons.most_common(10):
+        print(f"  {count} x {reason}")
+    started = time.time()
     print("=== Country detection ===", flush=True)
     services_used = detect_countries(passed_pairs, settings["url_test_batch_size"], settings["geo_timeout_seconds"])
     countries = Counter(node.get("country") or "unknown" for node in passed)
