@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="pics/XINZINVPN.png" alt="XinZin VPN" width="600">
+</p>
+
 # XinZin VPN
 
 ## 🇷🇺 Русский (Ru)
