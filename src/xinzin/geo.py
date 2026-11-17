@@ -17,7 +17,7 @@ SERVICES = [
 
 def flag(code):
     if not code or len(code) != 2 or not code.isalpha():
-        return "🌐"
+        return "🇽🇽"
     return "".join(chr(0x1F1E6 + ord(letter) - 65) for letter in code.upper())
 
 
