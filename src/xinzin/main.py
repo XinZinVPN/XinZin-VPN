@@ -132,6 +132,9 @@ def main():
     print(f"time: {round(time.time() - started)} s")
     print(f"countries: {dict(countries.most_common(15))}")
     print(f"answered by: {dict(services_used)}")
+    before = len(passed)
+    passed = [node for node in passed if node.get("country") != "RU"]
+    print(f"removed servers with exit in RU: {before - len(passed)}")
     lines = render(passed)
     previous_count = count_published(settings["published_url"])
     ok, message = validate(lines, previous_count, settings["min_servers"], settings["minimum_results_ratio"])
