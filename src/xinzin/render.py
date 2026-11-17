@@ -32,7 +32,7 @@ def rename_link(link, name):
 
 def sort_key(node):
     country = node.get("country") or ""
-    return (country == "", country, node.get("latency", 99))
+    return (country == "", country, -node.get("speed", 0))
 
 
 def render(nodes):
