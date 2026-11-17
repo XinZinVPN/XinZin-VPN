@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 from singbox import base_config
 
 BASE_PORT = 20000
-TEST_URL = "https://gstatic.com/generate_204"
+TEST_URL = "https://www.wikipedia.org/"
 MIN_BYTES = 10000
 
 
