@@ -33,7 +33,7 @@
 
 После завершения проверок серверам присваиваются соответствующие флаги стран в зависимости от их предполагаемого географического расположения.
 
-Если определить местоположение не удаётся, вместо флага отображается 🌐.
+Если определить местоположение не удаётся, вместо флага отображается 🇽🇽.
 
 ### Как пользоваться подпиской?
 
@@ -118,7 +118,7 @@ Next, a URL Test is performed to verify whether data can be transferred through 
 
 Once testing is complete, country flags are assigned according to the servers' estimated geographical locations.
 
-If the location cannot be determined, a 🌐 icon is displayed instead.
+If the location cannot be determined, a 🇽🇽 icon is displayed instead.
 
 ### How to use the subscription
 
@@ -203,7 +203,7 @@ This code was written by an AI because I don't know Python and am generally unfa
 
 پس از پایان آزمایش‌ها، بر اساس موقعیت جغرافیایی تخمینی سرورها، پرچم کشور مربوطه به آن‌ها اختصاص داده می‌شود.
 
-اگر موقعیت سرور قابل تشخیص نباشد، به‌جای پرچم از نماد 🌐 استفاده می‌شود.
+اگر موقعیت سرور قابل تشخیص نباشد، به‌جای پرچم از نماد 🇽🇽 استفاده می‌شود.
 
 ### چگونه از اشتراک استفاده کنیم؟
 
@@ -290,7 +290,7 @@ Ardından URL Test gerçekleştirilir. Bu test, sunucu üzerinden veri aktarım�
 
 Testler tamamlandıktan sonra sunucuların tahmini coğrafi konumlarına göre ülke bayrakları atanır.
 
-Sunucunun konumu belirlenemezse ülke bayrağı yerine 🌐 simgesi gösterilir.
+Sunucunun konumu belirlenemezse ülke bayrağı yerine 🇽🇽 simgesi gösterilir.
 
 ### Abonelik nasıl kullanılır?
 
@@ -377,7 +377,7 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 
 所有测试完成后，根据服务器推测的地理位置为其分配对应的国家或地区旗帜。
 
-如果无法识别服务器的位置，则显示 🌐 图标，而不是国家旗帜。
+如果无法识别服务器的位置，则显示 🇽🇽 图标，而不是国家旗帜。
 
 ### 如何使用订阅？
 
