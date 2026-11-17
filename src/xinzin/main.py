@@ -143,6 +143,6 @@ def main():
     if not ok:
         print("REJECTED: " + message)
         sys.exit(1)
-    write_output(lines, ROOT / "dist")
-    print("written dist/XinZinVPN.txt")
+    write_output(lines, ROOT, "XinZinVPN_Servers.txt")
+    print("written XinZinVPN_Servers.txt")
 main()
