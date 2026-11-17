@@ -65,12 +65,20 @@ XinZin VPN поддерживает клиенты, работающие с по
 
 *Названия пунктов меню могут отличаться в зависимости от версии приложения.*
 
+### Важная информация о стабильности
+
+XinZin VPN зависит от сторонних проектов и используемых ими источников серверов. Поэтому стабильная работа подписки и постоянная доступность всех серверов не гарантируются.
+
+Серверы могут переставать работать, удаляться или изменяться без предварительного уведомления. Результаты TCP Ping и URL Test также не гарантируют дальнейшую работоспособность сервера.
+
+Определение географического местоположения серверов может быть неточным. Отображаемые флаги стран не всегда соответствуют фактическому расположению серверов.
+
 ### Примечания
 
-P.S.  
-Проект находится в разработке.
-Новые подписки и тесты в скором времени появятся (Speed test)  
-Этот код был написан нейросетью так как я не знаю python и в целом незнаком с GitHub и делаю подписку больше для себя чем для остальных, но буду не против если ей будут пользоваться.
+P.S.
+Проект находится в разработке. Новые подписки и тесты появятся в скором времени (Speed test).
+
+Этот код был написан нейросетью, так как я не знаю Python и в целом не очень хорошо знаком с GitHub. Делаю эту подписку больше для себя, чем для остальных, но буду не против, если ей будут пользоваться другие.
 
 ### Ресурсы
 
@@ -82,8 +90,6 @@ P.S.
 - **Subzio:** https://github.com/Subzio/subzio
 - **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
 - **Luxxuria:** https://github.com/luxxuria/harvester
-
----
 
 ## 🇬🇧 English (En)
 
@@ -150,12 +156,20 @@ XinZin VPN supports VPN clients compatible with V2Ray / sing-box subscription fo
 
 *Menu names and navigation may vary depending on the application version.*
 
+### Important: Stability Notice
+
+XinZin VPN depends on third-party projects and their server sources. Therefore, continuous subscription stability and the availability of all servers cannot be guaranteed.
+
+Servers may stop working, be removed or change without prior notice. TCP Ping and URL Test results do not guarantee continued server availability.
+
+Server geolocation may also be inaccurate. Displayed country flags may not always reflect the actual server location.
+
 ### Notes
 
 P.S.  
 The project is still under development.
 New subscriptions and tests will be added soon (Speed test)  
-This code was written by an AI because I don't know Python and am generally unfamiliar with GitHub. I'm making this subscription primarily for myself rather than for others, but I don't mind if other people use it.
+This code was written by an AI because I don't know Python and am generally not very familiar with GitHub. I'm making this subscription more for myself than for anyone else, but I don't mind if others use it.
 
 ### Resources
 
@@ -167,8 +181,6 @@ This code was written by an AI because I don't know Python and am generally unfa
 - **Subzio:** https://github.com/Subzio/subzio
 - **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
 - **Luxxuria:** https://github.com/luxxuria/harvester
-
----
 
 ## 🇮🇷 فارسی (Fa)
 
@@ -235,6 +247,14 @@ XinZin VPN با کلاینت‌هایی که از فرمت‌های اشتراک
 
 *نام گزینه‌ها ممکن است بسته به نسخه برنامه متفاوت باشد.*
 
+### اطلاعات مهم درباره پایداری
+
+XinZin VPN به پروژه‌های شخص ثالث و منابع سرور آن‌ها وابسته است. بنابراین، پایداری دائمی اشتراک و عملکرد بدون مشکل تمام سرورها تضمین نمی‌شود.
+
+سرورها ممکن است بدون اطلاع قبلی از کار بیفتند، حذف شوند یا تغییر کنند. نتایج TCP Ping و URL Test نیز عملکرد مداوم سرورها را تضمین نمی‌کنند.
+
+تشخیص موقعیت جغرافیایی سرورها ممکن است دقیق نباشد و پرچم‌های نمایش‌داده‌شده همیشه نشان‌دهنده موقعیت واقعی سرورها نیستند.
+
 ### یادداشت‌ها
 
 P.S.  
@@ -252,8 +272,6 @@ P.S.
 - **Subzio:** https://github.com/Subzio/subzio
 - **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
 - **Luxxuria:** https://github.com/luxxuria/harvester
-
----
 
 ## 🇹🇷 Türkçe (Tr)
 
@@ -322,6 +340,14 @@ XinZin VPN; NekoBox, Throne ve HAPP dahil olmak üzere V2Ray / sing-box abonelik
 
 *Menü adları uygulama sürümüne göre değişiklik gösterebilir.*
 
+### Kararlılık Hakkında Önemli Bilgi
+
+XinZin VPN, üçüncü taraf projelere ve onların sunucu kaynaklarına bağlıdır. Bu nedenle aboneliğin sürekli kararlı çalışması ve tüm sunucuların kullanılabilirliği garanti edilemez.
+
+Sunucular önceden haber verilmeksizin çalışmayı durdurabilir, kaldırılabilir veya değiştirilebilir. TCP Ping ve URL Test sonuçları da sunucuların sürekli çalışacağını garanti etmez.
+
+Sunucuların coğrafi konumları yanlış tespit edilebilir. Gösterilen ülke bayrakları her zaman sunucuların gerçek konumunu yansıtmayabilir.
+
 ### Notlar
 
 P.S.  
@@ -339,8 +365,6 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 - **Subzio:** https://github.com/Subzio/subzio
 - **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
 - **Luxxuria:** https://github.com/luxxuria/harvester
-
----
 
 ## 🇨🇳 简体中文 (Zh-CN)
 
@@ -408,6 +432,14 @@ XinZin VPN 兼容支持 V2Ray / sing-box 订阅格式的客户端，包括 NekoB
 - 更新服务器列表，然后选择服务器连接。
 
 *不同版本的应用可能使用不同的菜单名称。*
+
+### 稳定性重要说明
+
+XinZin VPN 依赖第三方项目及其服务器来源，因此无法保证订阅始终稳定，也无法保证所有服务器持续可用。
+
+服务器可能在没有提前通知的情况下停止工作、被移除或发生变化。TCP Ping 和 URL Test 的测试结果也不代表服务器能够持续正常运行。
+
+服务器的地理位置识别可能存在误差，显示的国家旗帜不一定与服务器的实际所在地相符。
 
 ### 说明
 
