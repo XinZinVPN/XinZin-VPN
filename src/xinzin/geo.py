@@ -8,10 +8,26 @@ from concurrent.futures import ThreadPoolExecutor
 
 from check_url import BASE_PORT, build_run_config, wait_for_ports
 
+AGREE = 2
+
+
+def parse_trace(text):
+    for line in text.splitlines():
+        if line.startswith("loc="):
+            return line[4:].strip()
+    return None
+
+
+def parse_json(key):
+    return lambda text: json.loads(text).get(key)
+
+
 SERVICES = [
-    ("https://ipwho.is/", lambda data: data.get("country_code") if data.get("success", True) else None),
-    ("https://ipapi.co/json/", lambda data: data.get("country_code")),
-    ("http://ip-api.com/json/?fields=status,countryCode", lambda data: data.get("countryCode") if data.get("status") == "success" else None),
+    ("cloudflare", "https://www.cloudflare.com/cdn-cgi/trace", parse_trace),
+    ("ip-api.com", "http://ip-api.com/json/?fields=status,countryCode", parse_json("countryCode")),
+    ("ipwho.is", "https://ipwho.is/", parse_json("country_code")),
+    ("ipinfo.io", "https://ipinfo.io/json", parse_json("country")),
+    ("ipapi.co", "https://ipapi.co/json/", parse_json("country_code")),
 ]
 
 
@@ -21,20 +37,35 @@ def flag(code):
     return "".join(chr(0x1F1E6 + ord(letter) - 65) for letter in code.upper())
 
 
+def fetch_text(opener, url, timeout):
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with opener.open(request, timeout=timeout) as response:
+        return response.read(20000).decode("utf-8", errors="replace")
+
+
 def lookup_country(port, timeout):
     proxy = "http://127.0.0.1:" + str(port)
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
-    for url, extract in SERVICES:
+    answers = {}
+    for name, url, extract in SERVICES:
         try:
-            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with opener.open(request, timeout=timeout) as response:
-                data = json.loads(response.read(20000).decode("utf-8", errors="replace"))
-            code = extract(data)
-            if isinstance(code, str) and len(code) == 2 and code.isalpha():
-                return code.upper(), url
+            code = extract(fetch_text(opener, url, timeout))
         except Exception:
             continue
-    return "", ""
+        if isinstance(code, str) and len(code) == 2 and code.isalpha():
+            answers[name] = code.upper()
+        if answers and Counter(answers.values()).most_common(1)[0][1] >= AGREE:
+            break
+    return answers
+
+
+def decide(answers):
+    if not answers:
+        return ""
+    code, count = Counter(answers.values()).most_common(1)[0]
+    if code == "RU" and count < AGREE:
+        return ""
+    return code
 
 
 def run_batch(batch, timeout):
@@ -44,7 +75,7 @@ def run_batch(batch, timeout):
         json.dump(config, handle)
         path = handle.name
     process = subprocess.Popen(["sing-box", "run", "-c", path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    results = [("", "")] * len(batch)
+    results = [{} for _ in batch]
     try:
         if wait_for_ports(process, BASE_PORT + len(batch) - 1):
             with ThreadPoolExecutor(max_workers=len(batch)) as pool:
@@ -60,12 +91,28 @@ def run_batch(batch, timeout):
     return results
 
 
+def classify(answers):
+    if not answers:
+        return "no answers"
+    if len(set(answers.values())) > 1:
+        return "sources disagree"
+    if len(answers) == 1:
+        return "one source only"
+    return "sources agree"
+
+
 def detect_countries(pairs, batch_size, timeout):
-    services_used = Counter()
+    stats = Counter()
+    examples = []
     for start in range(0, len(pairs), batch_size):
         batch = pairs[start:start + batch_size]
-        for (node, _), (code, service) in zip(batch, run_batch(batch, timeout)):
-            node["country"] = code
-            services_used[service or "none"] += 1
+        for (node, _), answers in zip(batch, run_batch(batch, timeout)):
+            node["country"] = decide(answers)
+            kind = classify(answers)
+            stats[kind] += 1
+            if kind == "sources disagree" and len(examples) < 15:
+                examples.append(node["address"] + " -> " + str(answers) + " => " + (node["country"] or "unknown"))
         print("  batch " + str(start // batch_size + 1) + " done", flush=True)
-    return services_used
+    for example in examples:
+        print("  split: " + example)
+    return stats
