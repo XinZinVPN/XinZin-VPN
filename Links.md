@@ -1,0 +1,8 @@
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
