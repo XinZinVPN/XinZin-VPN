@@ -38,3 +38,12 @@ sources:
   - name: Subzio_WL_Collection
     url: https://raw.githubusercontent.com/Subzio/subzio/refs/heads/main/WHITE_LIST_PROXY_COLLECTION.txt
     priority: 0
+  - name: Free_VPN
+    url: https://raw.githubusercontent.com/sakazxc1400-creator/free-vpn-sub/data/output/sub-full.txt
+    priority: 0
+  - name: FastNodes_Verified
+    url: https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/verified.txt
+    priority: 0
+  - name: FastNodes_Top
+    url: https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/top.txt
+    priority: 0
