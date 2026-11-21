@@ -88,12 +88,7 @@ P.S.
 
 **Исходные репозитории используемых подписок:**
 
-- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
-- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
-- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
-- **Subzio:** https://github.com/Subzio/subzio
-- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
-- **Luxxuria:** https://github.com/luxxuria/harvester
+[Links.md](Links.md)
 
 ## 🇬🇧 English (En)
 
@@ -179,12 +174,7 @@ This code was written by an AI because I don't know Python and am generally not 
 
 **Source repositories:**
 
-- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
-- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
-- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
-- **Subzio:** https://github.com/Subzio/subzio
-- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
-- **Luxxuria:** https://github.com/luxxuria/harvester
+[Links.md](Links.md)
 
 ## 🇮🇷 فارسی (Fa)
 
@@ -270,12 +260,7 @@ P.S.
 
 **مخازن اصلی پروژه‌های مورد استفاده:**
 
-- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
-- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
-- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
-- **Subzio:** https://github.com/Subzio/subzio
-- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
-- **Luxxuria:** https://github.com/luxxuria/harvester
+[Links.md](Links.md)
 
 ## 🇹🇷 Türkçe (Tr)
 
@@ -363,12 +348,7 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 
 **Kullanılan aboneliklerin kaynak depoları:**
 
-- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
-- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
-- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
-- **Subzio:** https://github.com/Subzio/subzio
-- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
-- **Luxxuria:** https://github.com/luxxuria/harvester
+[Links.md](Links.md)
 
 ## 🇨🇳 简体中文 (Zh-CN)
 
@@ -456,12 +436,7 @@ P.S.
 
 **所使用订阅的源代码仓库：**
 
-- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
-- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
-- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
-- **Subzio:** https://github.com/Subzio/subzio
-- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
-- **Luxxuria:** https://github.com/luxxuria/harvester
+[Links.md](Links.md)
 
 
 
