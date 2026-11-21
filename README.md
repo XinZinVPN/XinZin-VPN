@@ -16,6 +16,8 @@
 4. `FlareFeed`
 5. `IgareckVPN`
 6. `Luxxuria`
+7. `FreeVPN`
+8. `FastNodes`
 
 ### Как это работает?
 
@@ -88,7 +90,14 @@ P.S.
 
 **Исходные репозитории используемых подписок:**
 
-[Links.md](Links.md)
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
 
 ## 🇬🇧 English (En)
 
@@ -102,6 +111,8 @@ P.S.
 4. `FlareFeed`
 5. `IgareckVPN`
 6. `Luxxuria`
+7. `FreeVPN`
+8. `FastNodes`
 
 ### How does it work?
 
@@ -174,7 +185,14 @@ This code was written by an AI because I don't know Python and am generally not 
 
 **Source repositories:**
 
-[Links.md](Links.md)
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
 
 ## 🇮🇷 فارسی (Fa)
 
@@ -188,6 +206,8 @@ This code was written by an AI because I don't know Python and am generally not 
 4. `FlareFeed`
 5. `IgareckVPN`
 6. `Luxxuria`
+7. `FreeVPN`
+8. `FastNodes`
 
 ### این پروژه چگونه کار می‌کند؟
 
@@ -260,7 +280,14 @@ P.S.
 
 **مخازن اصلی پروژه‌های مورد استفاده:**
 
-[Links.md](Links.md)
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
 
 ## 🇹🇷 Türkçe (Tr)
 
@@ -276,6 +303,8 @@ Kullanılan kaynaklar:
 4. `FlareFeed`
 5. `IgareckVPN`
 6. `Luxxuria`
+7. `FreeVPN`
+8. `FastNodes`
 
 ### Nasıl çalışır?
 
@@ -348,7 +377,14 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 
 **Kullanılan aboneliklerin kaynak depoları:**
 
-[Links.md](Links.md)
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
 
 ## 🇨🇳 简体中文 (Zh-CN)
 
@@ -364,6 +400,8 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 4. `FlareFeed`
 5. `IgareckVPN`
 6. `Luxxuria`
+7. `FreeVPN`
+8. `FastNodes`
 
 ### 工作原理
 
@@ -436,7 +474,14 @@ P.S.
 
 **所使用订阅的源代码仓库：**
 
-[Links.md](Links.md)
+- **IgareckVPN:** https://github.com/igareck/vpn-configs-for-russia
+- **AetrisVPN:** https://github.com/flaafix/AetrisVPN
+- **FlareFeed:** https://github.com/svinakraft-maker/FlareFeed
+- **Subzio:** https://github.com/Subzio/subzio
+- **NosokVPN:** https://github.com/aviamastersgh/vpn-free-russia
+- **Luxxuria:** https://github.com/luxxuria/harvester
+- **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
+- **FastNodes:** https://github.com/rtwo2/FastNodes
 
 
 
