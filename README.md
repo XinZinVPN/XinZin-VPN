@@ -1,4 +1,4 @@
-<p align="center">
+ <p align="center">
   <img src="pics/XINZINVPN.png" alt="XinZin VPN" width="600">
 </p>
 
@@ -35,7 +35,13 @@
 
 Затем запускается URL Test, который проверяет возможность передачи данных через сервер и определяет время отклика (Ping).
 
-**4. Определение местоположения**
+**4. Speed Test**
+
+После URL Test выполняется проверка скорости загрузки данных через сервер с использованием Cloudflare Speed Test. Для измерения используется локальный прокси sing-box, через который загружаются данные заданного размера.
+
+По результатам проверки определяется фактическая скорость загрузки в Mbps (Мбит/с). Серверы, не прошедшие проверку или показавшие скорость ниже установленного минимального значения, исключаются из итогового списка.
+
+**5. Определение местоположения**
 
 После завершения проверок серверам присваиваются соответствующие флаги стран в зависимости от их предполагаемого географического расположения.
 
@@ -75,14 +81,15 @@ XinZin VPN поддерживает клиенты, работающие с по
 
 XinZin VPN зависит от сторонних проектов и используемых ими источников серверов. Поэтому стабильная работа подписки и постоянная доступность всех серверов не гарантируются.
 
-Серверы могут переставать работать, удаляться или изменяться без предварительного уведомления. Результаты TCP Ping и URL Test также не гарантируют дальнейшую работоспособность сервера.
+Серверы могут переставать работать, удаляться или изменяться без предварительного уведомления. Результаты TCP Ping, URL Test и Speed Test также не гарантируют дальнейшую работоспособность сервера или сохранение измеренной скорости.
 
 Определение географического местоположения серверов может быть неточным. Отображаемые флаги стран не всегда соответствуют фактическому расположению серверов.
 
 ### Примечания
 
 P.S.
-Проект находится в разработке. Новые подписки и тесты появятся в скором времени (Speed test).
+
+Проект находится в разработке.
 
 Этот код был написан нейросетью, так как я не знаю Python и в целом не очень хорошо знаком с GitHub. Делаю эту подписку больше для себя, чем для остальных, но буду не против, если ей будут пользоваться другие.
 
@@ -98,6 +105,7 @@ P.S.
 - **Luxxuria:** https://github.com/luxxuria/harvester
 - **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
 - **FastNodes:** https://github.com/rtwo2/FastNodes
+
 
 ## 🇬🇧 English (En)
 
@@ -130,7 +138,13 @@ A TCP connection test is performed to check basic server accessibility and filte
 
 Next, a URL Test is performed to verify whether data can be transferred through the server and to measure its response time (Ping).
 
-**4. Geolocation**
+**4. Speed Test**
+
+After the URL Test, a download speed test is performed through each server using Cloudflare Speed Test. The test runs through a local sing-box proxy and downloads a specified amount of data.
+
+The actual download speed is measured in Mbps. Servers that fail the test or do not meet the configured minimum speed threshold are excluded from the final list.
+
+**5. Geolocation**
 
 Once testing is complete, country flags are assigned according to the servers' estimated geographical locations.
 
@@ -170,15 +184,16 @@ XinZin VPN supports VPN clients compatible with V2Ray / sing-box subscription fo
 
 XinZin VPN depends on third-party projects and their server sources. Therefore, continuous subscription stability and the availability of all servers cannot be guaranteed.
 
-Servers may stop working, be removed or change without prior notice. TCP Ping and URL Test results do not guarantee continued server availability.
+Servers may stop working, be removed or change without prior notice. TCP Ping, URL Test and Speed Test results do not guarantee continued server availability or that the measured speed will remain unchanged.
 
 Server geolocation may also be inaccurate. Displayed country flags may not always reflect the actual server location.
 
 ### Notes
 
-P.S.  
+P.S.
+
 The project is still under development.
-New subscriptions and tests will be added soon (Speed test)  
+
 This code was written by an AI because I don't know Python and am generally not very familiar with GitHub. I'm making this subscription more for myself than for anyone else, but I don't mind if others use it.
 
 ### Resources
@@ -193,6 +208,7 @@ This code was written by an AI because I don't know Python and am generally not 
 - **Luxxuria:** https://github.com/luxxuria/harvester
 - **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
 - **FastNodes:** https://github.com/rtwo2/FastNodes
+
 
 ## 🇮🇷 فارسی (Fa)
 
@@ -225,7 +241,13 @@ This code was written by an AI because I don't know Python and am generally not 
 
 سپس با استفاده از URL Test، امکان انتقال داده از طریق سرور بررسی و زمان پاسخ‌گویی (Ping) اندازه‌گیری می‌شود.
 
-**۴. تشخیص موقعیت جغرافیایی**
+**۴. Speed Test**
+
+پس از URL Test، سرعت دانلود داده‌ها از طریق هر سرور با استفاده از Cloudflare Speed Test بررسی می‌شود. این آزمایش از طریق یک پروکسی محلی sing-box انجام شده و مقدار مشخصی از داده‌ها را دانلود می‌کند.
+
+سرعت واقعی دانلود بر حسب Mbps اندازه‌گیری می‌شود. سرورهایی که در آزمایش ناموفق باشند یا سرعت آن‌ها کمتر از حداقل مقدار تعیین‌شده باشد، از فهرست نهایی حذف می‌شوند.
+
+**۵. تشخیص موقعیت جغرافیایی**
 
 پس از پایان آزمایش‌ها، بر اساس موقعیت جغرافیایی تخمینی سرورها، پرچم کشور مربوطه به آن‌ها اختصاص داده می‌شود.
 
@@ -265,15 +287,16 @@ XinZin VPN با کلاینت‌هایی که از فرمت‌های اشتراک
 
 XinZin VPN به پروژه‌های شخص ثالث و منابع سرور آن‌ها وابسته است. بنابراین، پایداری دائمی اشتراک و عملکرد بدون مشکل تمام سرورها تضمین نمی‌شود.
 
-سرورها ممکن است بدون اطلاع قبلی از کار بیفتند، حذف شوند یا تغییر کنند. نتایج TCP Ping و URL Test نیز عملکرد مداوم سرورها را تضمین نمی‌کنند.
+سرورها ممکن است بدون اطلاع قبلی از کار بیفتند، حذف شوند یا تغییر کنند. نتایج TCP Ping، URL Test و Speed Test نیز عملکرد مداوم سرورها یا ثابت ماندن سرعت اندازه‌گیری‌شده را تضمین نمی‌کنند.
 
 تشخیص موقعیت جغرافیایی سرورها ممکن است دقیق نباشد و پرچم‌های نمایش‌داده‌شده همیشه نشان‌دهنده موقعیت واقعی سرورها نیستند.
 
 ### یادداشت‌ها
 
-P.S.  
+P.S.
+
 پروژه هنوز در حال توسعه است.
-اشتراک‌های جدید و آزمایش‌های بیشتری به‌زودی اضافه خواهند شد (Speed test)  
+
 این کد توسط هوش مصنوعی نوشته شده است، زیرا من با پایتون آشنایی ندارم و به‌طور کلی تجربه زیادی در کار با GitHub ندارم. این اشتراک را بیشتر برای استفاده شخصی خودم تهیه می‌کنم، اما از استفاده دیگران از آن نیز استقبال می‌کنم.
 
 ### منابع
@@ -288,6 +311,7 @@ P.S.
 - **Luxxuria:** https://github.com/luxxuria/harvester
 - **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
 - **FastNodes:** https://github.com/rtwo2/FastNodes
+
 
 ## 🇹🇷 Türkçe (Tr)
 
@@ -322,7 +346,13 @@ Sunucuların temel bağlantı durumu kontrol edilir. Bu işlem, erişilemeyen ve
 
 Ardından URL Test gerçekleştirilir. Bu test, sunucu üzerinden veri aktarımının mümkün olup olmadığını kontrol eder ve yanıt süresini (Ping) ölçer.
 
-**4. Coğrafi Konum Belirleme**
+**4. Speed Test**
+
+URL Test'in ardından, Cloudflare Speed Test kullanılarak her sunucunun indirme hızı ölçülür. Test, yerel bir sing-box proxy üzerinden gerçekleştirilir ve belirlenen boyutta veri indirilir.
+
+Gerçek indirme hızı Mbps cinsinden ölçülür. Testi geçemeyen veya belirlenen minimum hız sınırının altında kalan sunucular nihai listeden çıkarılır.
+
+**5. Coğrafi Konum Belirleme**
 
 Testler tamamlandıktan sonra sunucuların tahmini coğrafi konumlarına göre ülke bayrakları atanır.
 
@@ -362,15 +392,16 @@ XinZin VPN; NekoBox, Throne ve HAPP dahil olmak üzere V2Ray / sing-box abonelik
 
 XinZin VPN, üçüncü taraf projelere ve onların sunucu kaynaklarına bağlıdır. Bu nedenle aboneliğin sürekli kararlı çalışması ve tüm sunucuların kullanılabilirliği garanti edilemez.
 
-Sunucular önceden haber verilmeksizin çalışmayı durdurabilir, kaldırılabilir veya değiştirilebilir. TCP Ping ve URL Test sonuçları da sunucuların sürekli çalışacağını garanti etmez.
+Sunucular önceden haber verilmeksizin çalışmayı durdurabilir, kaldırılabilir veya değiştirilebilir. TCP Ping, URL Test ve Speed Test sonuçları sunucuların sürekli çalışacağını veya ölçülen hızın değişmeden kalacağını garanti etmez.
 
 Sunucuların coğrafi konumları yanlış tespit edilebilir. Gösterilen ülke bayrakları her zaman sunucuların gerçek konumunu yansıtmayabilir.
 
 ### Notlar
 
-P.S.  
+P.S.
+
 Proje geliştirme aşamasındadır.
-Yakında yeni abonelikler ve testler eklenecektir (Speed test)  
+
 Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığı için yapay zekâ tarafından yazılmıştır. Bu aboneliği öncelikle kendim kullanmak için hazırlıyorum, ancak başkalarının da kullanmasına karşı değilim.
 
 ### Kaynaklar
@@ -385,6 +416,7 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 - **Luxxuria:** https://github.com/luxxuria/harvester
 - **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
 - **FastNodes:** https://github.com/rtwo2/FastNodes
+
 
 ## 🇨🇳 简体中文 (Zh-CN)
 
@@ -419,7 +451,13 @@ Bu kod, Python bilmediğim ve genel olarak GitHub konusunda deneyimim olmadığ�
 
 接下来执行 URL Test，检查服务器是否能够正常传输数据，并测量响应延迟（Ping）。
 
-**4. 地理位置识别**
+**4. Speed Test**
+
+完成 URL Test 后，使用 Cloudflare Speed Test 测试每台服务器的下载速度。测试通过本地 sing-box 代理进行，并下载指定大小的数据。
+
+实际下载速度以 Mbps 为单位进行测量。未能通过测试或速度低于设定最低阈值的服务器将从最终列表中移除。
+
+**5. 地理位置识别**
 
 所有测试完成后，根据服务器推测的地理位置为其分配对应的国家或地区旗帜。
 
@@ -459,15 +497,16 @@ XinZin VPN 兼容支持 V2Ray / sing-box 订阅格式的客户端，包括 NekoB
 
 XinZin VPN 依赖第三方项目及其服务器来源，因此无法保证订阅始终稳定，也无法保证所有服务器持续可用。
 
-服务器可能在没有提前通知的情况下停止工作、被移除或发生变化。TCP Ping 和 URL Test 的测试结果也不代表服务器能够持续正常运行。
+服务器可能在没有提前通知的情况下停止工作、被移除或发生变化。TCP Ping、URL Test 和 Speed Test 的测试结果也不代表服务器能够持续正常运行，或测得的速度始终保持不变。
 
 服务器的地理位置识别可能存在误差，显示的国家旗帜不一定与服务器的实际所在地相符。
 
 ### 说明
 
-P.S.  
+P.S.
+
 项目仍在开发中。
-新的订阅源和测试功能将在近期推出（Speed test）  
+
 这段代码是由人工智能编写的，因为我不懂 Python，而且总体来说对 GitHub 也不熟悉。我创建这个订阅主要是为了自己使用，不过也欢迎其他人使用。
 
 ### 资源
@@ -482,7 +521,5 @@ P.S.
 - **Luxxuria:** https://github.com/luxxuria/harvester
 - **FreeVPN:** https://github.com/sakazxc1400-creator/free-vpn-sub
 - **FastNodes:** https://github.com/rtwo2/FastNodes
-
-
 
 Developed by Fafix
